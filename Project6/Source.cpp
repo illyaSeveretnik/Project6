@@ -3,15 +3,14 @@
 
 using namespace std;
 
-
 int* Init(int size)
 {
-	int* cap = new int[size];
+	int* mas = new int[size];
 	for (int i = 0; i < size; i++)
 	{
-		cap[i] = rand() % 3;
+		mas[i] = rand() % 3;
 	}
-	return cap;
+	return mas;
 }
 
 void radota()
@@ -20,9 +19,9 @@ void radota()
 	int size = 10;
 	int* cap = Init(size);
 	int* trol = new int[size];
-	for (int i = 0; i < size; i++)
+	for (int i = size - 1, j = 0; i >= 0; i--, j++)
 	{
-		*(trol + i) = *(cap + i);
+		*(trol + j) = *(cap + i);
 	}
 	for (int i = 0; i < size; i++)
 	{
